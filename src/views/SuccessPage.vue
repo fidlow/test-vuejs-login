@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ModalForm from "@/components/Modal.vue";
+import ModalWindow from "@/components/ModalWindow.vue";
 import router from "@/router";
 import { onUnmounted, ref } from "vue";
 import { useAuthStore } from "@/stores/auth";
@@ -28,12 +28,12 @@ onUnmounted(() => {
 
 </script>
 <template>
-  <ModalForm :onClose="closeForm" title="Success">
+  <ModalWindow :onClose="closeForm" title="Success">
     <div class="form">
       <span class="check">✔️</span>
       <button class="submit" @click="closeForm">Close ({{ count }} sec)</button>
     </div>
-  </ModalForm>
+  </ModalWindow>
 </template>
 
 

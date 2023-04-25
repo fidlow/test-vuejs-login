@@ -3,7 +3,7 @@ import { reactive, ref } from "vue";
 import type { Account } from "@/stores/auth";
 import { useAuthStore } from "@/stores/auth";
 import router from "@/router";
-import ModalForm from "@/components/Modal.vue";
+import ModalWindow from "@/components/ModalWindow.vue";
 
 const authStore = useAuthStore();
 
@@ -26,14 +26,14 @@ const closeForm = () => {
 </script>
 
 <template>
-  <ModalForm :onClose="closeForm" title="Login">
+  <ModalWindow :onClose="closeForm" title="Login">
     <form class="form">
       <input v-model="account.name" placeholder="login" type="text">
       <input v-model="account.password" placeholder="password" type="password">
       <span v-if="isError" class="error">Wrong login or password</span>
       <button :disabled="authStore.isLoading" class="submit" @click="submitForm">Submit</button>
     </form>
-  </ModalForm>
+  </ModalWindow>
 </template>
 
 
