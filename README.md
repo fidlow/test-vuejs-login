@@ -1,4 +1,4 @@
-# test-vuejs-login-form
+# test-vuejs-login
 
 ## Project Setup
 
